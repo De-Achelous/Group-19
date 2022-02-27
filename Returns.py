@@ -1,0 +1,3 @@
+class Returns:
+
+    print("test")
