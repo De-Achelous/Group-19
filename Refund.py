@@ -17,7 +17,7 @@ def refund():
         elif received_check=="N":
             print("we will contact the delivering company and will return your fund to your account!")
     else:
-        print("the order number you have inputed is not in our system, please input again")
+        print("the order number you have inputted is not in our system, please input again")
     return"Thanks"
 
 refund()
