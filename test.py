@@ -3,7 +3,6 @@ from ast import Or
 from operator import or_, truediv
 from pickle import FALSE, TRUE
 
-
 def load_qna():
     questions = []
     answers = []
@@ -15,35 +14,54 @@ def load_qna():
         text.close
     return questions, answers
 
-
 def process(i):
-    status = TRUE
+    status =TRUE
     err_message = "Sorry I can't understand your question!"
     while (status == TRUE):
         if (i.lower() == load_qna()[0][0].lower() or "hours" in i.lower()):
             print(load_qna()[1][0] + "\nDo you have anymore questions ?")
             index = input()
             if index == "no":
-                status = FALSE
+                exit()
+            elif index=="yes":
+                print("hi what can i help you with ?")
+                message=input()
+                process(message)
         elif (i.lower() == load_qna()[0][1].lower() or "ship" in i.lower()):
             print(load_qna()[1][1] + "\nDo you have anymore questions ?")
             index = input()
             if index == "no":
-                status = FALSE
+                exit()
+            elif index=="yes":
+                print("hi what can i help you with ?")
+                message=input()
+                process(message)
         elif (i.lower() == load_qna()[0][2].lower() or "contact" in i.lower()):
             print(load_qna()[1][2] + "\nDo you have anymore questions ?")
             index = input()
             if index == "no":
-                status = FALSE
+                exit()
+            elif index=="yes":
+                print("hi what can i help you with ?")
+                message=input()
+                process(message)
         elif (i.lower() == load_qna()[0][3].lower() or "help" in i.lower()):
             print(load_qna()[1][3] + "\nDo you have anymore questions ?")
             index = input()
             if index == "no":
-                status = FALSE
+                exit()
+            elif index=="yes":
+                print("hi what can i help you with ?")
+                message=input()
+                process(message)
         else:
             return err_message
+
+
+
 
 
 print("hi what can i help you with ?")
 message = input()
 process(message)
+
