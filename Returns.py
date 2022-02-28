@@ -160,6 +160,3 @@ class Returns:
 
 
 
-retbot = Returns()
-
-retbot.Return_Process()
