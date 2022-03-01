@@ -8,8 +8,6 @@ class Returns:
 
 
     def Return_Process(self):
-        print("Hello!")
-        time.sleep(2)
         print("Welcome to our automated return service!")
         time.sleep(1.2)
         while True:
@@ -149,8 +147,10 @@ class Returns:
         print("Thank you for using our automated return service!")
 
 
-retbot = Returns()
-retbot.Return_Process()
+if __name__ == '__main__':
+    retbot = Returns()
+    retbot.Return_Process()
+
 
 
 

@@ -20,5 +20,6 @@ def refund():
         print("the order number you have inputted is not in our system, please input again")
     return"Thanks"
 
-refund()
+if __name__ == '__main__':
+    refund()
 
