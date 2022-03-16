@@ -1,75 +1,14 @@
 from Returns import Returns
 from Refund import refund
+from order_again import OrderAgain
+from concierge import Concierge
 from test import load_qna, process
-import PySimpleGUI as sg
 import time
-
-# Set theme for the GUI
-sg.theme("DarkAmber")
-
-question = "Hello! How are you today?"
-layout = [[sg.Text("", key="-RECORDS-")],
-          [sg.Text(question, key="-BOT-")],
-          [sg.Input(key="-HUMAN-")],
-          [sg.Button("OK"), sg.Button("EXIT")]]
-
-window = sg.Window("Chatbot", layout)
-
-while True:
-    event, values = window.read()
-    # print(event, values)
-    # print(values["-IN-"])
-    if event in (None, 'EXIT'):
-        break
-
-    # Save the old chat records & current questions
-    Text = window["-RECORDS-"].get()
-    Question = window["-BOT-"].get()
-
-    # Update the chat records
-    window["-RECORDS-"].update(Text + "\n" + Question + ":\n" + values['-HUMAN-'])
-
-    # Process the user's greeting and give response, some nlp apis can goes here.
-    IN = values['-HUMAN-']
-    time.sleep(0.5)
-    if "good" in IN.lower():
-        window["-BOT-"].update("That's good!")
-    if "bad" in IN.lower():
-        window["-BOT-"].update("Sorry to hear that!")
-    # time.sleep(0.5)
-
-    Question = window["-BOT-"].get()
-    Text = window["-RECORDS-"].get()
-    window["-RECORDS-"].update("\n" + Text + "\n" + Question + ":\n")
-
-    # Bot ask for a job
-    window["-BOT-"].update("How can I help you today?")
-    IN = values['-HUMAN-']
-    if "return" in IN.lower():
-        print("return")
-    elif "refund" in IN.lower():
-        print("refund")
-    elif "question" in IN.lower():
-        print("question")
-
-    Question = window["-BOT-"].get()
-    Text = window["-RECORDS-"].get()
-    window["-RECORDS-"].update("\n" + Text + "\n" + Question + ":\n")
-
-    # End of conversation
-    window["-BOT-"].update("Is there anything else I can help you with? (yes/no)")
-    IN = values['-HUMAN-']
-    if "yes" in IN.lower():
-        continue
-    if "no" in IN.lower():
-        exit(1)
-
-window.close()
-exit()
-
 
 def main():
     retbot = Returns()
+    orderAgain = OrderAgain()
+    concierge = Concierge()
     print("Hello!")
     time.sleep(2)
     howareyou = str(input("How are you today?"))
@@ -86,6 +25,12 @@ def main():
         elif "refund" in response.lower():
             time.sleep(2)
             refund()
+        elif "order again" in response.lower():
+            time.sleep(2)
+            orderAgain.order_again_chat()
+        elif "concierge" in response.lower():
+            time.sleep(2)
+            concierge.concierge_chat()
         elif "question" in response.lower():
             time.sleep(2)
             print("hi what can i help you with ?")
@@ -102,4 +47,8 @@ def main():
             print("Thank you for your time! Goodbye!")
             break
 
-# main()
+
+
+
+
+main()
