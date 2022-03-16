@@ -1,11 +1,12 @@
 import time
+
+
 class Returns:
 
     def __init__(self):
         self.orders = {1: "iPhone 13 64GB", 2: "Nvidia RTX 3080", 3: "Playstation 5"}
         self.facilities = ["Kelowna", "Edmonton", "Toronto"]
         self.shipping = ["Canada Post", "Purolator", "UPS"]
-
 
     def Return_Process(self):
         print("Welcome to our automated return service!")
@@ -34,7 +35,8 @@ class Returns:
         time.sleep(2)
         while True:
             time.sleep(2)
-            facility = str(input("Please choose the facility that is closest to you (" + ", ".join(self.facilities) + "):"))
+            facility = str(
+                input("Please choose the facility that is closest to you (" + ", ".join(self.facilities) + "):"))
             if facility.lower() == "kelowna":
                 time.sleep(2)
                 facility = 0
@@ -79,7 +81,8 @@ class Returns:
         time.sleep(2)
         while True:
             time.sleep(2)
-            shipform = str(input("We're almost done! Would you like to complete the quick shipping form now or later? (now/later)"))
+            shipform = str(input(
+                "We're almost done! Would you like to complete the quick shipping form now or later? (now/later)"))
             if shipform.lower() == "now":
                 time.sleep(2)
                 self.Ship_Progress(facility, email, creditOrRefund)
@@ -96,9 +99,6 @@ class Returns:
                 time.sleep(2)
                 print("Invalid response.")
 
-
-
-
     def Ship_Progress(self, facility, email, creditOrRefund):
         print("Thank you for choosing to fill out the shipping form now!")
         time.sleep(2)
@@ -106,7 +106,7 @@ class Returns:
         time.sleep(2)
         while True:
             time.sleep(2)
-            preferredshipping = str(input("What is your preferred postal service ("+", ".join(self.shipping) + "):"))
+            preferredshipping = str(input("What is your preferred postal service (" + ", ".join(self.shipping) + "):"))
             if preferredshipping.lower() == "canada post":
                 time.sleep(2)
                 preferredshipping = 0
@@ -129,16 +129,21 @@ class Returns:
         time.sleep(2)
         print("In order to ship your product to us, please find an appropriately sized box to ship it in.")
         time.sleep(3)
-        print("The box should be able to fit comfortably in the box, along with protection (i.e packing peanuts, bubble wrap)")
+        print(
+            "The box should be able to fit comfortably in the box, along with protection (i.e packing peanuts, bubble wrap)")
         time.sleep(3)
         print("After securing the product inside the box, you must attach a shipping label to it.")
         time.sleep(3)
-        print("A " + self.shipping[preferredshipping] + " shipping label has been sent to " + email + " addressed to the " + self.facilities[facility] + " facility.")
+        print("A " + self.shipping[
+            preferredshipping] + " shipping label has been sent to " + email + " addressed to the " + self.facilities[
+                  facility] + " facility.")
         time.sleep(3)
-        print("Once the shipping label has been secured onto the package, please go to your nearest " + self.shipping[preferredshipping] + " and ship it out.")
+        print("Once the shipping label has been secured onto the package, please go to your nearest " + self.shipping[
+            preferredshipping] + " and ship it out.")
         time.sleep(3)
         if creditOrRefund == True:
-            print("Once the tracking number has updated on our end, the in-store credit will be shown in your account balance shortly.")
+            print(
+                "Once the tracking number has updated on our end, the in-store credit will be shown in your account balance shortly.")
         elif creditOrRefund == False:
             print("Once the tracking number has updated on our end, the refund will be issued to your card shortly.")
         time.sleep(3)
@@ -150,13 +155,3 @@ class Returns:
 if __name__ == '__main__':
     retbot = Returns()
     retbot.Return_Process()
-
-
-
-
-
-
-
-
-
-
