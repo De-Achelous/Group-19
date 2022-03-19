@@ -17,8 +17,11 @@ The spacy is used to do Tokenization, POS tagging and Tokenization.
 The nltk is used to do sentiment analysis and Synonym recognition.
 
 The user input text is tokenized by spacy and the tokens are saved. 
+
 Tagging the pos of the tokens by spacy. 
+
 Check if there is any noun inside the input text. 
+
 Get the synonyms of all nouns by wordnet module of nltk. 
 If there are any synonyms of computer, phone or game, present the price list of the corresponding products.
 Generate amed entity recognition of each token by spacy.
