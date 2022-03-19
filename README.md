@@ -22,13 +22,23 @@ Tagging the pos of the tokens by spacy.
 
 Check if there is any noun inside the input text. 
 
-Get the synonyms of all nouns by wordnet module of nltk. 
+Get the synonyms of all nouns by wordnet module of nltk.
+
 If there are any synonyms of computer, phone or game, present the price list of the corresponding products.
+
 Generate amed entity recognition of each token by spacy.
+
 If there is any geo location inside the text, suggest the user to buy ticket.
+
 If there is any art work inside the text, suggest the user to go to the library.
+
 If there is any person inside the text, tell the user that I have no idea.
+
 Do the sentiment analysis of the text by SentimentIntensityAnalyzer of nltk.
+
 If the text is positive, say some good words to the user.
+
 If the text is negative, tell a joke to the user.
+
 If all the above items cannot be done. Say sorry to the user.
+
